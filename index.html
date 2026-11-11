@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; media-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'" />
+		<meta name="referrer" content="no-referrer" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Walk in Frame</title>
+		<meta name="description" content="Walk in Frame turns your property photos into short walk-through videos. The camera moves, the property doesn't change. Ask for a free sample." />
+		<meta name="theme-color" content="#12211D" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://nextevdev.github.io/walkinframe/" />
+		<link rel="canonical" href="https://nextevdev.github.io/walkinframe/" />
+		<meta property="og:title" content="Walk in Frame: your property photos, walked through" />
+		<meta property="og:description" content="Short walk-through videos built only from your property photos. Ask for a free sample." />
+		<meta property="og:image" content="https://nextevdev.github.io/walkinframe/assets/media/reel-poster.jpg" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+		<link rel="preload" href="assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin />
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<a class="skip" href="#sample">Skip to the sample request</a>
+
+		<header class="bar">
+			<a class="bar-logo" href="#top" aria-label="Walk in Frame, back to top">
+				<img src="assets/logo-lockup-escuro.png" alt="Walk in Frame" width="2200" height="520" />
+			</a>
+			<a class="btn btn-door" href="#" data-mailto="Free sample request">Get a free sample</a>
+		</header>
+
+		<main id="top">
+			<section class="hero" aria-labelledby="hero-title">
+				<div class="hero-copy">
+					<h1 id="hero-title">
+						<span class="h-heavy">The camera moves.</span>
+						<span class="h-light">The property doesn't.</span>
+					</h1>
+					<p class="lede">Send us your property photos. We return a short walk-through video built only from what the photos show.</p>
+					<div class="actions">
+						<a class="btn btn-door" href="#" data-mailto="Free sample request">Get a free sample</a>
+						<a class="link" href="#strip">See how a photo walks</a>
+					</div>
+				</div>
+
+				<div class="hero-reel">
+					<div class="reel-frame">
+						<video id="reel" class="reel" src="assets/media/reel.mp4" poster="assets/media/reel-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Sample reel: six rooms, each built from a single listing photo"></video>
+						<button class="reel-toggle" type="button" id="reel-toggle">Pause</button>
+					</div>
+					<p class="reel-note">Sample reel, 27 s. Built from stock photographs, not client work.</p>
+				</div>
+			</section>
+
+			<section class="strip" id="strip" aria-labelledby="strip-title">
+				<h2 id="strip-title"><span class="hint-hover">Hover a photo. It walks.</span><span class="hint-touch">Tap a photo. It walks.</span></h2>
+
+				<div class="tiles">
+					<figure class="tile tile-a">
+						<button class="tile-btn" type="button" aria-pressed="false" aria-label="Play the garden and pool clip">
+							<img src="assets/photos/01-exterior.jpg" alt="Brick house seen across a pool and lawn" width="1280" height="853" loading="lazy" />
+							<video src="assets/media/01-exterior.mp4" muted loop playsinline preload="none" tabindex="-1" aria-hidden="true"></video>
+							<span class="tile-state" aria-hidden="true">Photo</span>
+						</button>
+						<figcaption>Garden and pool</figcaption>
+					</figure>
+
+					<div class="promise">
+						<h3>Nothing in the video that isn't in the photo.</h3>
+						<p>No added furniture, no bigger rooms, no invented spaces. The camera moves through your photograph, and the property stays as listed.</p>
+					</div>
+
+					<figure class="tile tile-b">
+						<button class="tile-btn" type="button" aria-pressed="false" aria-label="Play the entrance hall clip">
+							<img src="assets/photos/02-hall.jpg" alt="Entrance hall with a curved staircase" width="1280" height="853" loading="lazy" />
+							<video src="assets/media/02-hall.mp4" muted loop playsinline preload="none" tabindex="-1" aria-hidden="true"></video>
+							<span class="tile-state" aria-hidden="true">Photo</span>
+						</button>
+						<figcaption>Entrance hall</figcaption>
+					</figure>
+
+					<figure class="tile tile-c">
+						<button class="tile-btn" type="button" aria-pressed="false" aria-label="Play the open-plan living clip">
+							<img src="assets/photos/03-living-wide.jpg" alt="Open-plan living room with kitchen and a city view" width="1280" height="853" loading="lazy" />
+							<video src="assets/media/03-living-wide.mp4" muted loop playsinline preload="none" tabindex="-1" aria-hidden="true"></video>
+							<span class="tile-state" aria-hidden="true">Photo</span>
+						</button>
+						<figcaption>Open-plan living</figcaption>
+					</figure>
+
+					<figure class="tile tile-d">
+						<button class="tile-btn" type="button" aria-pressed="false" aria-label="Play the living room clip">
+							<img src="assets/photos/04-living.jpg" alt="Living room with a dark sofa and orange curtains" width="1280" height="853" loading="lazy" />
+							<video src="assets/media/04-living.mp4" muted loop playsinline preload="none" tabindex="-1" aria-hidden="true"></video>
+							<span class="tile-state" aria-hidden="true">Photo</span>
+						</button>
+						<figcaption>Living room</figcaption>
+					</figure>
+
+					<figure class="tile tile-e">
+						<button class="tile-btn" type="button" aria-pressed="false" aria-label="Play the kitchen clip">
+							<img src="assets/photos/05-kitchen.jpg" alt="Kitchen with a marble counter and two wire stools" width="1280" height="853" loading="lazy" />
+							<video src="assets/media/05-kitchen.mp4" muted loop playsinline preload="none" tabindex="-1" aria-hidden="true"></video>
+							<span class="tile-state" aria-hidden="true">Photo</span>
+						</button>
+						<figcaption>Kitchen</figcaption>
+					</figure>
+
+					<figure class="tile tile-f">
+						<button class="tile-btn" type="button" aria-pressed="false" aria-label="Play the bedroom clip">
+							<img src="assets/photos/06-bedroom.jpg" alt="Bedroom with teal curtains and a glass wall" width="1280" height="853" loading="lazy" />
+							<video src="assets/media/06-bedroom.mp4" muted loop playsinline preload="none" tabindex="-1" aria-hidden="true"></video>
+							<span class="tile-state" aria-hidden="true">Photo</span>
+						</button>
+						<figcaption>Bedroom</figcaption>
+					</figure>
+
+				</div>
+			</section>
+
+			<section class="steps" id="steps" aria-labelledby="steps-title">
+				<h2 id="steps-title" class="sr-only">How it works</h2>
+				<ol>
+					<li>
+						<strong>Send</strong>
+						<span>The property photos you already have.</span>
+					</li>
+					<li>
+						<strong>Receive</strong>
+						<span>A short walk-through video with room labels, made only from those photos.</span>
+					</li>
+					<li>
+						<strong>Publish</strong>
+						<span>On your site, the property portals and social.</span>
+					</li>
+				</ol>
+				<p class="steps-note">The video runs about 25 seconds in 16:9, like the sample reel above.</p>
+			</section>
+
+			<section class="close" id="sample" aria-labelledby="close-title">
+				<h2 id="close-title">Send one listing. Get a sample back.</h2>
+				<div class="close-side">
+					<p>The sample is free, and it is made from the photos you send.</p>
+					<a class="btn btn-door btn-lg" href="#" data-mailto="Free sample request">Get a free sample</a>
+					<p class="mail-line">Or write to <a href="#" data-mailto="">walkinframe.studio@gmail.com</a></p>
+				</div>
+			</section>
+		</main>
+
+		<footer class="foot">
+			<img class="foot-logo" src="assets/logo-lockup-escuro.png" alt="Walk in Frame" width="2200" height="520" />
+			<p>Sample reel and clips use stock photography from Pexels. They are demonstrations, not client work.</p>
+			<p>This site sets no cookies and loads nothing from third parties.</p>
+		</footer>
+
+		<script src="main.js" defer></script>
+	</body>
+</html>
