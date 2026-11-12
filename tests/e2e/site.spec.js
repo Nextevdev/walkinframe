@@ -60,9 +60,9 @@ test("sticky bar never hides a keyboard-focused control", async ({ page }) => {
 });
 
 const HEADINGS = {
-	pt: "As fotos do anúncio, em vídeo de visita.",
-	it: "Le foto dell'annuncio, in video di visita.",
-	es: "Las fotos del anuncio, en vídeo de recorrido.",
+	pt: "As fotos do anúncio, em visita virtual.",
+	it: "Le foto dell'annuncio, in video tour.",
+	es: "Las fotos del anuncio, en recorrido virtual.",
 	en: "Your listing photos, as a walk-through.",
 };
 
@@ -89,8 +89,8 @@ for (const [code, heading] of Object.entries(HEADINGS)) {
 test("the selector switches language and the choice survives a reload", async ({ page }) => {
 	await page.goto("/index.html");
 	await page.locator('#lang [data-lang="it"]').click();
-	await expect(page.locator("h1 .h-heavy")).toHaveText("Le foto dell'annuncio, in video di visita.");
+	await expect(page.locator("h1 .h-heavy")).toHaveText("Le foto dell'annuncio, in video tour.");
 	await page.reload();
-	await expect(page.locator("h1 .h-heavy")).toHaveText("Le foto dell'annuncio, in video di visita.");
+	await expect(page.locator("h1 .h-heavy")).toHaveText("Le foto dell'annuncio, in video tour.");
 	await expect(page.locator('#lang [data-lang="it"]')).toHaveAttribute("aria-checked", "true");
 });
