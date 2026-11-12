@@ -59,7 +59,7 @@ describe("applyLanguage on the real page", () => {
 		applyLanguage(document, "pt");
 		expect(document.documentElement.lang).toBe("pt");
 		expect(document.title).toBe(t("title"));
-		expect(document.querySelector("h1 .h-heavy").textContent).toBe("Fotos que percorrem o imóvel.");
+		expect(document.querySelector("h1 .h-heavy").textContent).toBe("As fotos do anúncio, em vídeo de visita.");
 		expect(document.querySelector(".tile-a img").getAttribute("alt")).toContain("piscina");
 		expect(document.querySelector(".tile-a .tile-btn").getAttribute("aria-label")).toBe(
 			"Reproduzir vídeo: Jardim e piscina",

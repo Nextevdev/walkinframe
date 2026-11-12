@@ -4,7 +4,7 @@ test("page loads clean: no console errors, no horizontal overflow", async ({ pag
 	const errors = [];
 	page.on("console", (message) => message.type() === "error" && errors.push(message.text()));
 	await page.goto("/index.html");
-	await expect(page.getByRole("heading", { level: 1 })).toContainText("Photos that walk the property.");
+	await expect(page.getByRole("heading", { level: 1 })).toContainText("Your listing photos, as a walk-through.");
 	const overflow = await page.evaluate(
 		() => document.documentElement.scrollWidth - document.documentElement.clientWidth,
 	);
@@ -15,7 +15,7 @@ test("page loads clean: no console errors, no horizontal overflow", async ({ pag
 test("request buttons are real mailto links with a subject", async ({ page }) => {
 	await page.goto("/index.html");
 	const links = page.locator('a.btn[href^="mailto:"]');
-	await expect(links).toHaveCount(3);
+	await expect(links).toHaveCount(2);
 	expect(await links.first().getAttribute("href")).toContain("subject=Free%20sample%20request");
 });
 
@@ -60,10 +60,10 @@ test("sticky bar never hides a keyboard-focused control", async ({ page }) => {
 });
 
 const HEADINGS = {
-	pt: "Fotos que percorrem o imóvel.",
-	it: "Le foto entrano in casa.",
-	es: "Fotos que recorren el inmueble.",
-	en: "Photos that walk the property.",
+	pt: "As fotos do anúncio, em vídeo de visita.",
+	it: "Le foto dell'annuncio, in video di visita.",
+	es: "Las fotos del anuncio, en vídeo de recorrido.",
+	en: "Your listing photos, as a walk-through.",
 };
 
 for (const [code, heading] of Object.entries(HEADINGS)) {
@@ -89,8 +89,8 @@ for (const [code, heading] of Object.entries(HEADINGS)) {
 test("the selector switches language and the choice survives a reload", async ({ page }) => {
 	await page.goto("/index.html");
 	await page.locator('#lang [data-lang="it"]').click();
-	await expect(page.locator("h1 .h-heavy")).toHaveText("Le foto entrano in casa.");
+	await expect(page.locator("h1 .h-heavy")).toHaveText("Le foto dell'annuncio, in video di visita.");
 	await page.reload();
-	await expect(page.locator("h1 .h-heavy")).toHaveText("Le foto entrano in casa.");
+	await expect(page.locator("h1 .h-heavy")).toHaveText("Le foto dell'annuncio, in video di visita.");
 	await expect(page.locator('#lang [data-lang="it"]')).toHaveAttribute("aria-checked", "true");
 });
