@@ -14,11 +14,11 @@ Stock photographs from Pexels, used under the Pexels License (free to use). Resi
 | photos/04-living.jpg | https://www.pexels.com/photo/interior-of-modern-apartment-with-furniture-6527029/ |
 | photos/05-kitchen.jpg | https://www.pexels.com/photo/contemporary-apartment-with-open-space-kitchen-7031214/ |
 | photos/06-bedroom.jpg | https://www.pexels.com/photo/spacious-bedroom-with-glass-wall-in-apartment-6492385/ |
-| media/reel-poster.jpg | a frame from media/reel.mp4 |
+| media/reel-poster.jpg, media/reel-poster-*.jpg | a frame from the matching reel |
 
-## Clips (assets/media/0*.mp4) and reel (assets/media/reel.mp4)
+## Clips (assets/media/0*.mp4) and reels (assets/media/reel-pt|it|es|en.mp4)
 
-Each clip was generated from the matching still above with an AI image-to-video model in Google Flow, then trimmed to about 4 seconds, cropped to 16:9 where needed and compressed with ffmpeg. The exact model and version used for each clip was not recorded. The reel joins the six clips with room labels and the Walk in Frame end card, assembled in HyperFrames.
+Each clip was generated from the matching still above with an AI image-to-video model in Google Flow, then trimmed to about 4 seconds, cropped to 16:9 where needed and compressed with ffmpeg. The exact model and version used for each clip was not recorded. The reel joins the six clips with room labels and the Walk in Frame end card, assembled in HyperFrames, rendered once per language (room labels in Portuguese, Italian, Spanish and English) and recompressed to 1280x720 with ffmpeg. The posters (reel-poster-*.jpg) are frames from those reels.
 
 ## Font (assets/fonts/archivo-var.woff2)
 

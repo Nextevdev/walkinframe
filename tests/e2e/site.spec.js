@@ -4,7 +4,7 @@ test("page loads clean: no console errors, no horizontal overflow", async ({ pag
 	const errors = [];
 	page.on("console", (message) => message.type() === "error" && errors.push(message.text()));
 	await page.goto("/index.html");
-	await expect(page.getByRole("heading", { level: 1 })).toContainText("The camera moves.");
+	await expect(page.getByRole("heading", { level: 1 })).toContainText("Photos that walk the property.");
 	const overflow = await page.evaluate(
 		() => document.documentElement.scrollWidth - document.documentElement.clientWidth,
 	);
@@ -60,10 +60,10 @@ test("sticky bar never hides a keyboard-focused control", async ({ page }) => {
 });
 
 const HEADINGS = {
-	pt: "A câmara move-se.",
-	it: "La camera si muove.",
-	es: "La cámara se mueve.",
-	en: "The camera moves.",
+	pt: "Fotos que percorrem o imóvel.",
+	it: "Le foto entrano in casa.",
+	es: "Fotos que recorren el inmueble.",
+	en: "Photos that walk the property.",
 };
 
 for (const [code, heading] of Object.entries(HEADINGS)) {
@@ -71,7 +71,7 @@ for (const [code, heading] of Object.entries(HEADINGS)) {
 		await page.goto(`/index.html?lang=${code}`);
 		await expect(page.locator("h1 .h-heavy")).toHaveText(heading);
 		await expect(page.locator("html")).toHaveAttribute("lang", code);
-		await expect(page.locator("#lang")).toHaveValue(code);
+		await expect(page.locator(`#lang [data-lang="${code}"]`)).toHaveAttribute("aria-checked", "true");
 		expect(await page.locator('a[data-mail="request"]').first().getAttribute("href")).toContain("subject=");
 		const overflow = await page.evaluate(
 			() => document.documentElement.scrollWidth - document.documentElement.clientWidth,
@@ -88,9 +88,9 @@ for (const [code, heading] of Object.entries(HEADINGS)) {
 
 test("the selector switches language and the choice survives a reload", async ({ page }) => {
 	await page.goto("/index.html");
-	await page.locator("#lang").selectOption("it");
-	await expect(page.locator("h1 .h-heavy")).toHaveText("La camera si muove.");
+	await page.locator('#lang [data-lang="it"]').click();
+	await expect(page.locator("h1 .h-heavy")).toHaveText("Le foto entrano in casa.");
 	await page.reload();
-	await expect(page.locator("h1 .h-heavy")).toHaveText("La camera si muove.");
-	await expect(page.locator("#lang")).toHaveValue("it");
+	await expect(page.locator("h1 .h-heavy")).toHaveText("Le foto entrano in casa.");
+	await expect(page.locator('#lang [data-lang="it"]')).toHaveAttribute("aria-checked", "true");
 });

@@ -5,7 +5,7 @@ export default defineConfig({
 	workers: 1,
 	retries: process.env.CI ? 1 : 0,
 	webServer: {
-		command: "python -m http.server 8766",
+		command: "node tests/serve.mjs",
 		url: "http://localhost:8766/index.html",
 		reuseExistingServer: true,
 	},

@@ -1,4 +1,12 @@
-import { t } from "./i18n.js";
+import { currentLanguage, t } from "./i18n.js";
+
+/**
+ * @param {string} language
+ * @returns {{ src: string, poster: string }}
+ */
+export function reelFiles(language) {
+	return { src: `assets/media/reel-${language}.mp4`, poster: `assets/media/reel-poster-${language}.jpg` };
+}
 
 /**
  * Hero reel: pause control, progress bar, no autoplay under reduced motion,
@@ -38,8 +46,30 @@ export function initReel(doc, env) {
 	reel.addEventListener("play", sync);
 	reel.addEventListener("pause", sync);
 	reel.addEventListener("timeupdate", progress);
-	doc.addEventListener("languagechange", sync);
 	sync();
+
+	/* Each language has its own render, with the room labels in that language. The new one picks up where the old stopped. */
+	const useLanguage = () => {
+		const files = reelFiles(currentLanguage());
+		if (reel.getAttribute("src") !== files.src) {
+			const resumeAt = reel.currentTime;
+			const wasPlaying = !reel.paused;
+			reel.setAttribute("poster", files.poster);
+			reel.setAttribute("src", files.src);
+			reel.addEventListener(
+				"loadedmetadata",
+				() => {
+					if (resumeAt > 0 && resumeAt < reel.duration) reel.currentTime = resumeAt;
+					if (wasPlaying) reel.play().catch(() => {});
+				},
+				{ once: true },
+			);
+			reel.load();
+		}
+		sync();
+	};
+	doc.addEventListener("languagechange", useLanguage);
+	useLanguage();
 
 	const win = doc.defaultView;
 	if (win && "IntersectionObserver" in win && !env.reduceMotion) {

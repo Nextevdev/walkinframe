@@ -1,5 +1,4 @@
 {
-	"entry": ["tests/**/*.js", "*.config.js"],
-	"project": ["src/**/*.js", "tests/**/*.js"],
-	"ignoreBinaries": ["python"]
+	"entry": ["tests/**/*.{js,mjs}", "*.config.js"],
+	"project": ["src/**/*.js", "tests/**/*.{js,mjs}"]
 }

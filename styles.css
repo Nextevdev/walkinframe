@@ -167,34 +167,72 @@ a {
 	display: none;
 }
 
-/* Language selector: native select, so keyboard and screen readers get it for free. */
+/* Language switch: one orange pill that stretches toward the chosen tab (see src/langswitch.js). */
 .lang {
-	appearance: none;
-	min-height: 2.75rem;
-	min-width: 4rem;
-	padding: 0 1.9rem 0 0.9rem;
-	font: inherit;
-	font-size: 1rem;
-	font-weight: 700;
-	letter-spacing: 0.04em;
-	color: var(--cream);
-	background-color: transparent;
-	background-image: linear-gradient(45deg, transparent 50%, var(--cream) 50%),
-		linear-gradient(135deg, var(--cream) 50%, transparent 50%);
-	background-position: calc(100% - 1.05rem) 55%, calc(100% - 0.75rem) 55%;
-	background-size: 0.3rem 0.3rem;
-	background-repeat: no-repeat;
+	--seg: 2.5rem;
+	position: relative;
+	display: flex;
+	padding: 3px;
+	height: 2.75rem;
 	border: 1px solid var(--cream-dim);
-	border-radius: 0;
-	cursor: pointer;
 	transition: border-color 160ms ease;
 }
 .lang:hover {
 	border-color: var(--cream);
 }
-.lang option {
-	background: var(--ground-deep);
-	color: var(--cream);
+.lang-pill {
+	position: absolute;
+	top: 3px;
+	bottom: 3px;
+	left: 0;
+	width: var(--seg);
+	background: var(--door);
+	will-change: transform, width;
+}
+.lang-opt {
+	position: relative;
+	z-index: 1;
+	flex: none;
+	width: var(--seg);
+	padding: 0;
+	font: inherit;
+	font-size: 0.9375rem;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	cursor: pointer;
+	background: transparent;
+	border: 0;
+	/* Dark as the pill reaches the label, cream-dim otherwise. */
+	color: color-mix(in srgb, var(--ground-deep) calc(var(--near, 0) * 100%), var(--cream-dim));
+}
+.lang-opt:focus-visible {
+	outline: 3px solid var(--cream);
+	outline-offset: -3px;
+}
+.lang-ring {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 2.75rem;
+	height: 2.75rem;
+	margin: -1.375rem 0 0 -1.375rem;
+	border: 2px solid var(--cream);
+	border-radius: 50%;
+	pointer-events: none;
+	animation: lang-ring 420ms linear forwards;
+}
+@keyframes lang-ring {
+	from {
+		opacity: 0.7;
+		transform: scale(0.55);
+	}
+	to {
+		opacity: 0;
+		transform: scale(1.7);
+	}
+}
+.logo-mark {
+	display: none;
 }
 
 /* Hero */
@@ -216,7 +254,7 @@ a {
 .hero h1 {
 	margin: 0;
 	font-stretch: 70%;
-	font-size: clamp(3.1rem, 7.2vw, 6rem);
+	font-size: clamp(2.7rem, 5.8vw, 5.2rem);
 	line-height: 0.95;
 	letter-spacing: -0.02em;
 	text-wrap: balance;
@@ -713,7 +751,7 @@ html {
 		order: -1;
 	}
 	.hero h1 {
-		font-size: clamp(3rem, 14vw, 5rem);
+		font-size: clamp(2.6rem, 11.5vw, 4.4rem);
 	}
 	.lede {
 		max-width: 36ch;
@@ -755,9 +793,16 @@ html {
 		gap: 0.5rem;
 	}
 	.lang {
-		min-width: 3.5rem;
-		padding-left: 0.6rem;
-		background-position: calc(100% - 0.95rem) 55%, calc(100% - 0.65rem) 55%;
+		--seg: 2.25rem;
+	}
+	.logo-full {
+		display: none;
+	}
+	.bar-logo img.logo-mark {
+		display: block;
+		width: 2.25rem;
+		height: 2.25rem;
+		margin-left: 0;
 	}
 	.bar .cta-long {
 		display: none;

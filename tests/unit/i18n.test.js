@@ -59,12 +59,13 @@ describe("applyLanguage on the real page", () => {
 		applyLanguage(document, "pt");
 		expect(document.documentElement.lang).toBe("pt");
 		expect(document.title).toBe(t("title"));
-		expect(document.querySelector("h1 .h-heavy").textContent).toBe("A câmara move-se.");
+		expect(document.querySelector("h1 .h-heavy").textContent).toBe("Fotos que percorrem o imóvel.");
 		expect(document.querySelector(".tile-a img").getAttribute("alt")).toContain("piscina");
 		expect(document.querySelector(".tile-a .tile-btn").getAttribute("aria-label")).toBe(
-			"Reproduzir clipe: Jardim e piscina",
+			"Reproduzir vídeo: Jardim e piscina",
 		);
-		expect(document.getElementById("lang").value).toBe("pt");
+		expect(document.querySelector('[data-lang="pt"]').getAttribute("aria-checked")).toBe("true");
+		expect(document.querySelector('[data-lang="en"]').getAttribute("aria-checked")).toBe("false");
 
 		const href = document.querySelector('a[data-mail="request"]').getAttribute("href");
 		expect(href).toContain("mailto:walkinframe.studio@gmail.com?subject=Pedido%20de%20amostra%20gratuita");
@@ -106,9 +107,7 @@ describe("initI18n", () => {
 		expect(initI18n(document, window)).toBe("it");
 		expect(document.documentElement.lang).toBe("it");
 
-		const select = document.getElementById("lang");
-		select.value = "es";
-		select.dispatchEvent(new Event("change"));
+		document.querySelector('[data-lang="es"]').click();
 		expect(document.documentElement.lang).toBe("es");
 		expect(window.localStorage.getItem("wif-lang")).toBe("es");
 	});
@@ -122,9 +121,7 @@ describe("initI18n", () => {
 			},
 		};
 		expect(initI18n(document, blocked)).toBe("pt");
-		const select = document.getElementById("lang");
-		select.value = "en";
-		expect(() => select.dispatchEvent(new Event("change"))).not.toThrow();
+		expect(() => document.querySelector('[data-lang="en"]').click()).not.toThrow();
 		expect(document.documentElement.lang).toBe("en");
 	});
 });

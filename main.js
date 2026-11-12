@@ -1,6 +1,7 @@
 import { initCopy } from "./src/copy.js";
 import { readEnv } from "./src/env.js";
 import { initI18n } from "./src/i18n.js";
+import { initLangSwitch } from "./src/langswitch.js";
 import { initReel } from "./src/reel.js";
 import { initImageSkeleton, initReveal } from "./src/reveal.js";
 import { createTelemetry } from "./src/telemetry.js";
@@ -10,10 +11,11 @@ import { initTiles } from "./src/tiles.js";
 createTelemetry({ enabled: false, adapters: [] }, window);
 
 const env = readEnv(window);
+/* First, so every other module starts in the visitor's language and nothing animates from English. */
+initI18n(document, window);
 initImageSkeleton(document);
 initReveal(document, env);
 initReel(document, env);
 initTiles(document, env);
 initCopy(document);
-/* Last, so every module is already listening for the language change. */
-initI18n(document, window);
+initLangSwitch(document, env);

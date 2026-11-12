@@ -94,9 +94,11 @@ export function initTiles(doc, env) {
 	}
 
 	/* A language change redraws each chip in its current state. */
-	doc.addEventListener("languagechange", () => {
+	const relabel = () => {
 		for (const button of tiles) setLabel(button, button.querySelector(".tile-state")?.dataset.chip ?? "chip_photo");
-	});
+	};
+	doc.addEventListener("languagechange", relabel);
+	relabel();
 
 	/* Touch screens have no hover: the tile in view plays, one at a time. */
 	const win = doc.defaultView;

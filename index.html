@@ -24,15 +24,17 @@
 
 		<header class="bar">
 			<a class="bar-logo" href="#top" aria-label="Walk in Frame, back to top" data-i18n-attr="aria-label:logo_aria">
-				<img src="assets/logo-lockup-escuro.png" alt="Walk in Frame" width="2200" height="520" />
+				<img class="logo-full" src="assets/logo-lockup-escuro.png" alt="Walk in Frame" width="2200" height="520" />
+				<img class="logo-mark" src="assets/mark.svg" alt="" width="120" height="120" />
 			</a>
 			<div class="bar-end">
-				<select class="lang" id="lang" aria-label="Language" data-i18n-attr="aria-label:lang_label">
-					<option value="pt" lang="pt" aria-label="Português">PT</option>
-					<option value="it" lang="it" aria-label="Italiano">IT</option>
-					<option value="es" lang="es" aria-label="Español">ES</option>
-					<option value="en" lang="en" aria-label="English" selected>EN</option>
-				</select>
+				<div class="lang" id="lang" role="radiogroup" aria-label="Language" data-i18n-attr="aria-label:lang_label">
+					<span class="lang-pill" aria-hidden="true"></span>
+					<button class="lang-opt" type="button" role="radio" aria-checked="false" tabindex="-1" data-lang="pt" lang="pt" aria-label="Português" title="Português"><span>PT</span></button>
+					<button class="lang-opt" type="button" role="radio" aria-checked="false" tabindex="-1" data-lang="it" lang="it" aria-label="Italiano" title="Italiano"><span>IT</span></button>
+					<button class="lang-opt" type="button" role="radio" aria-checked="false" tabindex="-1" data-lang="es" lang="es" aria-label="Español" title="Español"><span>ES</span></button>
+					<button class="lang-opt" type="button" role="radio" aria-checked="true" tabindex="0" data-lang="en" lang="en" aria-label="English" title="English"><span>EN</span></button>
+				</div>
 				<a class="btn btn-door" data-mail="request" href="mailto:walkinframe.studio@gmail.com?subject=Free%20sample%20request&amp;body=Agency%3A%0D%0AListing%20photos%20(link%20or%20attached)%3A%0D%0ANumber%20of%20photos%3A"><span class="cta-long" data-i18n="cta">Request a sample</span><span class="cta-short" data-i18n="cta_short">Sample</span></a>
 			</div>
 		</header>
@@ -41,8 +43,8 @@
 			<section class="hero" aria-labelledby="hero-title">
 				<div class="hero-copy">
 					<h1 id="hero-title">
-						<span class="h-heavy" data-i18n="h1_a">The camera moves.</span>
-						<span class="h-light" data-i18n="h1_b">The property doesn't.</span>
+						<span class="h-heavy" data-i18n="h1_a">Photos that walk the property.</span>
+						<span class="h-light" data-i18n="h1_b">Not one square metre invented.</span>
 					</h1>
 					<p class="lede" data-i18n="lede">Send us your property photos. We return a short walk-through video built only from what the photos show.</p>
 					<div class="actions">
@@ -53,7 +55,7 @@
 
 				<div class="hero-reel">
 					<div class="reel-frame">
-						<video id="reel" class="reel" src="assets/media/reel.mp4" poster="assets/media/reel-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Sample reel: six rooms, each built from a single listing photo" data-i18n-attr="aria-label:reel_aria"></video>
+						<video id="reel" class="reel" src="assets/media/reel-en.mp4" poster="assets/media/reel-poster-en.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Sample reel: six rooms, each built from a single listing photo" data-i18n-attr="aria-label:reel_aria"></video>
 						<button class="reel-toggle" type="button" id="reel-toggle">Pause</button>
 						<div class="reel-progress" aria-hidden="true"><i></i></div>
 					</div>

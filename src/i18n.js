@@ -12,8 +12,8 @@ export const messages = {
 		lang_label: "Language",
 		cta: "Request a sample",
 		cta_short: "Sample",
-		h1_a: "The camera moves.",
-		h1_b: "The property doesn't.",
+		h1_a: "Photos that walk the property.",
+		h1_b: "Not one square metre invented.",
 		lede: "Send us your property photos. We return a short walk-through video built only from what the photos show.",
 		link_see: "See how a photo walks",
 		reel_aria: "Sample reel: six rooms, each built from a single listing photo",
@@ -65,39 +65,39 @@ export const messages = {
 		mail_body: "Agency:\nListing photos (link or attached):\nNumber of photos:",
 	},
 	pt: {
-		title: "Walk in Frame: as fotografias do seu imóvel, em visita",
+		title: "Walk in Frame: as fotos do seu imóvel, em visita",
 		description:
-			"A Walk in Frame transforma as fotografias do seu imóvel em vídeos curtos de visita. A câmara move-se, o imóvel não muda. Peça uma amostra gratuita.",
+			"A Walk in Frame transforma as fotos do seu imóvel em vídeos curtos de visita. A câmara percorre as fotos e o imóvel não muda. Peça uma amostra gratuita.",
 		skip: "Ir para o pedido de amostra",
 		logo_aria: "Walk in Frame, voltar ao topo",
 		lang_label: "Idioma",
 		cta: "Pedir uma amostra",
 		cta_short: "Amostra",
-		h1_a: "A câmara move-se.",
-		h1_b: "O imóvel não.",
-		lede: "Envie-nos as fotografias do imóvel. Devolvemos um vídeo curto de visita, feito apenas com o que as fotografias mostram.",
-		link_see: "Veja como uma foto se move",
-		reel_aria: "Vídeo de exemplo: seis divisões, cada uma feita a partir de uma só fotografia do anúncio",
-		reel_note: "Vídeo de exemplo, 27 s. Feito com fotografias de banco de imagens, não com trabalho de clientes.",
+		h1_a: "Fotos que percorrem o imóvel.",
+		h1_b: "Nem um metro quadrado inventado.",
+		lede: "Envie-nos as fotos do imóvel e devolvemos-lhe um vídeo curto, feito só com o que as fotos mostram.",
+		link_see: "Veja uma foto em movimento",
+		reel_aria: "Vídeo de exemplo: seis divisões, cada uma feita a partir de uma só foto do anúncio",
+		reel_note: "Vídeo de exemplo, 27 s. Feito com fotos de bancos de imagens, não com trabalhos de clientes.",
 		pause: "Pausar",
 		play: "Reproduzir",
-		promise_h: "Nada no vídeo que não esteja na fotografia.",
+		promise_h: "Nada no vídeo que não esteja na foto.",
 		promise_p:
-			"Sem mobília acrescentada, sem divisões maiores, sem espaços inventados. A câmara move-se pela sua fotografia e o imóvel fica como está anunciado.",
-		hint_hover: "Passe o rato numa foto. Ela move-se.",
-		hint_touch: "Toque numa foto. Ela move-se.",
-		hint_click: "Clique numa foto para ver o clipe.",
-		play_clip: "Reproduzir clipe:",
+			"Nada de móveis acrescentados, divisões ampliadas ou espaços inventados. A câmara percorre a sua foto e o imóvel fica tal como foi anunciado.",
+		hint_hover: "Passe o rato por cima de uma foto e veja-a mexer.",
+		hint_touch: "Toque numa foto para a ver mexer.",
+		hint_click: "Clique numa foto para a pôr em movimento.",
+		play_clip: "Reproduzir vídeo:",
 		tile_a: "Jardim e piscina",
 		tile_b: "Hall de entrada",
-		tile_c: "Sala open space",
+		tile_c: "Sala integrada",
 		tile_d: "Sala de estar",
 		tile_e: "Cozinha",
 		tile_f: "Quarto",
-		alt_a: "Casa de tijolo vista do outro lado de uma piscina e de um relvado",
-		alt_b: "Hall de entrada com uma escada curva",
-		alt_c: "Sala open space com cozinha e vista para a cidade",
-		alt_d: "Sala com sofá escuro e cortinas laranja",
+		alt_a: "Moradia de tijolo vista do outro lado da piscina e do relvado",
+		alt_b: "Hall de entrada com escadaria curva",
+		alt_c: "Sala em open space com cozinha e vista sobre a cidade",
+		alt_d: "Sala de estar com sofá escuro e cortinas cor de laranja",
 		alt_e: "Cozinha com bancada de mármore e dois bancos de arame",
 		alt_f: "Quarto com cortinas azul-petróleo e parede de vidro",
 		chip_photo: "Foto",
@@ -107,26 +107,26 @@ export const messages = {
 		source_photo: "Foto original",
 		steps_h: "Como funciona",
 		step1_h: "Envie",
-		step1_p: "As fotografias do imóvel que já tem.",
+		step1_p: "As fotos do imóvel que já tem.",
 		step2_h: "Receba",
-		step2_p: "Um vídeo curto de visita com os nomes das divisões, feito apenas com essas fotografias.",
+		step2_p: "Um vídeo curto com o nome de cada divisão, feito só com essas fotos.",
 		step3_h: "Publique",
 		step3_p: "No seu site, nos portais imobiliários e nas redes sociais.",
 		steps_note:
-			"Cada vídeo dura cerca de 25 segundos em 16:9, com os nomes das divisões e um cartão final com a marca.",
+			"Cada vídeo dura cerca de 25 segundos, em formato 16:9, com o nome de cada divisão e um ecrã final com a marca.",
 		close_h: "Envie um anúncio. Receba uma amostra.",
 		close_p:
-			"Anexe ou envie a ligação das fotografias de um anúncio. A amostra é gratuita e é feita apenas com essas fotografias.",
-		next_line: "Envie as fotografias e respondemos por e-mail com a sua amostra.",
+			"Anexe as fotos de um anúncio ou envie-nos a ligação. A amostra é gratuita e feita apenas com essas fotos.",
+		next_line: "Envie as fotos e respondemos por e-mail com a sua amostra.",
 		mail_pre: "Ou escreva para",
-		copy: "Copiar endereço",
+		copy: "Copiar e-mail",
 		copied: "Copiado",
-		copy_fail: "Selecione o endereço acima para o copiar",
+		copy_fail: "Selecione o e-mail acima para o copiar",
 		foot1:
-			"O vídeo de exemplo e os clipes usam fotografia de banco de imagens da Pexels. São demonstrações, não trabalho de clientes.",
-		foot2: "Este site não define cookies nem carrega nada de terceiros.",
+			"O vídeo de exemplo e os vídeos das fotos usam imagens de stock da Pexels. São demonstrações, não trabalhos de clientes.",
+		foot2: "Este site não usa cookies nem carrega nada de terceiros.",
 		mail_subject: "Pedido de amostra gratuita",
-		mail_body: "Agência:\nFotografias do anúncio (ligação ou em anexo):\nNúmero de fotografias:",
+		mail_body: "Agência:\nFotos do anúncio (ligação ou em anexo):\nN.º de fotos:",
 	},
 	it: {
 		title: "Walk in Frame: le foto del tuo immobile, in visita",
@@ -137,29 +137,29 @@ export const messages = {
 		lang_label: "Lingua",
 		cta: "Richiedi un campione",
 		cta_short: "Campione",
-		h1_a: "La camera si muove.",
-		h1_b: "L'immobile no.",
-		lede: "Inviaci le foto dell'immobile. Ti restituiamo un breve video di visita realizzato solo con ciò che le foto mostrano.",
-		link_see: "Guarda come si muove una foto",
+		h1_a: "Le foto entrano in casa.",
+		h1_b: "Nemmeno un metro quadro inventato.",
+		lede: "Inviaci le foto dell'immobile: ti restituiamo un breve video, realizzato solo con ciò che le foto mostrano.",
+		link_see: "Guarda una foto in movimento",
 		reel_aria: "Video di esempio: sei stanze, ciascuna ricavata da una sola foto dell'annuncio",
-		reel_note: "Video di esempio, 27 s. Realizzato con fotografie stock, non con lavori per clienti.",
+		reel_note: "Video di esempio, 27 s. Realizzato con foto di archivio, non con lavori per clienti.",
 		pause: "Pausa",
 		play: "Riproduci",
 		promise_h: "Niente nel video che non sia nella foto.",
 		promise_p:
-			"Niente mobili aggiunti, niente stanze più grandi, niente spazi inventati. La camera si muove dentro la tua foto e l'immobile resta com'è annunciato.",
-		hint_hover: "Passa il mouse su una foto. Si muove.",
-		hint_touch: "Tocca una foto. Si muove.",
-		hint_click: "Fai clic su una foto per vedere il clip.",
-		play_clip: "Riproduci clip:",
+			"Niente mobili aggiunti, stanze ingrandite o spazi inventati. La camera si muove dentro la tua foto e l'immobile resta com'è nell'annuncio.",
+		hint_hover: "Passa il mouse su una foto e guardala muoversi.",
+		hint_touch: "Tocca una foto e guardala muoversi.",
+		hint_click: "Fai clic su una foto per avviare il video.",
+		play_clip: "Riproduci video:",
 		tile_a: "Giardino e piscina",
 		tile_b: "Ingresso",
-		tile_c: "Living open space",
+		tile_c: "Soggiorno open space",
 		tile_d: "Soggiorno",
 		tile_e: "Cucina",
 		tile_f: "Camera da letto",
-		alt_a: "Casa in mattoni vista oltre una piscina e un prato",
-		alt_b: "Ingresso con una scala curva",
+		alt_a: "Villa in mattoni vista oltre la piscina e il prato",
+		alt_b: "Ingresso con scala curva",
 		alt_c: "Soggiorno open space con cucina e vista sulla città",
 		alt_d: "Soggiorno con divano scuro e tende arancioni",
 		alt_e: "Cucina con piano in marmo e due sgabelli in metallo",
@@ -173,56 +173,58 @@ export const messages = {
 		step1_h: "Invia",
 		step1_p: "Le foto dell'immobile che hai già.",
 		step2_h: "Ricevi",
-		step2_p: "Un breve video di visita con le etichette delle stanze, realizzato solo con quelle foto.",
+		step2_p: "Un breve video con il nome di ogni stanza, realizzato solo con quelle foto.",
 		step3_h: "Pubblica",
 		step3_p: "Sul tuo sito, sui portali immobiliari e sui social.",
 		steps_note:
-			"Ogni video dura circa 25 secondi in 16:9, con le etichette delle stanze e una scheda finale con il marchio.",
+			"Ogni video dura circa 25 secondi, in formato 16:9, con il nome di ogni stanza e una schermata finale con il marchio.",
 		close_h: "Invia un annuncio. Ricevi un campione.",
-		close_p: "Allega o linka le foto di un annuncio. Il campione è gratuito ed è realizzato solo con quelle foto.",
+		close_p:
+			"Allega le foto di un annuncio o mandaci il link. Il campione è gratuito ed è realizzato solo con quelle foto.",
 		next_line: "Invia le foto e ti rispondiamo via e-mail con il tuo campione.",
 		mail_pre: "Oppure scrivi a",
-		copy: "Copia indirizzo",
+		copy: "Copia l'e-mail",
 		copied: "Copiato",
-		copy_fail: "Seleziona l'indirizzo qui sopra per copiarlo",
-		foot1: "Il video di esempio e i clip usano fotografie stock di Pexels. Sono dimostrazioni, non lavori per clienti.",
-		foot2: "Questo sito non imposta cookie e non carica nulla da terze parti.",
+		copy_fail: "Seleziona l'e-mail qui sopra per copiarla",
+		foot1:
+			"Il video di esempio e i video delle foto usano immagini stock di Pexels. Sono dimostrazioni, non lavori per clienti.",
+		foot2: "Questo sito non usa cookie e non carica nulla da terze parti.",
 		mail_subject: "Richiesta di campione gratuito",
 		mail_body: "Agenzia:\nFoto dell'annuncio (link o allegate):\nNumero di foto:",
 	},
 	es: {
-		title: "Walk in Frame: las fotos de tu propiedad, en recorrido",
+		title: "Walk in Frame: las fotos de tu inmueble, en recorrido",
 		description:
-			"Walk in Frame convierte las fotos de tu propiedad en vídeos cortos de recorrido. La cámara se mueve, la propiedad no cambia. Pide una muestra gratuita.",
+			"Walk in Frame convierte las fotos de tu inmueble en vídeos cortos de recorrido. La cámara recorre las fotos y el inmueble no cambia. Pide una muestra gratuita.",
 		skip: "Ir a la solicitud de muestra",
 		logo_aria: "Walk in Frame, volver arriba",
 		lang_label: "Idioma",
 		cta: "Pedir una muestra",
 		cta_short: "Muestra",
-		h1_a: "La cámara se mueve.",
-		h1_b: "La propiedad no.",
-		lede: "Envíanos las fotos de la propiedad. Te devolvemos un vídeo corto de recorrido hecho solo con lo que muestran las fotos.",
-		link_see: "Mira cómo se mueve una foto",
+		h1_a: "Fotos que recorren el inmueble.",
+		h1_b: "Ni un metro cuadrado inventado.",
+		lede: "Envíanos las fotos de tu inmueble y te devolvemos un vídeo corto, hecho solo con lo que ellas muestran.",
+		link_see: "Mira una foto en movimiento",
 		reel_aria: "Vídeo de muestra: seis estancias, cada una hecha a partir de una sola foto del anuncio",
-		reel_note: "Vídeo de muestra, 27 s. Hecho con fotografías de stock, no con trabajos de clientes.",
+		reel_note: "Vídeo de muestra, 27 s. Hecho con fotos de bancos de imágenes, no con trabajos de clientes.",
 		pause: "Pausar",
 		play: "Reproducir",
 		promise_h: "Nada en el vídeo que no esté en la foto.",
 		promise_p:
-			"Sin muebles añadidos, sin habitaciones más grandes, sin espacios inventados. La cámara se mueve por tu foto y la propiedad queda tal como está anunciada.",
-		hint_hover: "Pasa el ratón sobre una foto. Se mueve.",
-		hint_touch: "Toca una foto. Se mueve.",
-		hint_click: "Haz clic en una foto para ver su clip.",
-		play_clip: "Reproducir clip:",
+			"Sin muebles añadidos, sin estancias ampliadas, sin espacios inventados. La cámara recorre tu foto y el inmueble queda tal como se anunció.",
+		hint_hover: "Pasa el ratón por una foto y mírala moverse.",
+		hint_touch: "Toca una foto y mírala moverse.",
+		hint_click: "Haz clic en una foto para ver su vídeo.",
+		play_clip: "Reproducir vídeo:",
 		tile_a: "Jardín y piscina",
 		tile_b: "Recibidor",
-		tile_c: "Salón de planta abierta",
+		tile_c: "Salón diáfano",
 		tile_d: "Salón",
 		tile_e: "Cocina",
 		tile_f: "Dormitorio",
-		alt_a: "Casa de ladrillo vista al otro lado de una piscina y un césped",
-		alt_b: "Recibidor con una escalera curva",
-		alt_c: "Salón de planta abierta con cocina y vistas a la ciudad",
+		alt_a: "Casa de ladrillo visto al otro lado de la piscina y el césped",
+		alt_b: "Recibidor con escalera curva",
+		alt_c: "Salón diáfano con cocina y vistas a la ciudad",
 		alt_d: "Salón con sofá oscuro y cortinas naranjas",
 		alt_e: "Cocina con encimera de mármol y dos taburetes de alambre",
 		alt_f: "Dormitorio con cortinas verde azulado y pared de cristal",
@@ -233,22 +235,23 @@ export const messages = {
 		source_photo: "Foto original",
 		steps_h: "Cómo funciona",
 		step1_h: "Envía",
-		step1_p: "Las fotos de la propiedad que ya tienes.",
+		step1_p: "Las fotos del inmueble que ya tienes.",
 		step2_h: "Recibe",
-		step2_p: "Un vídeo corto de recorrido con el nombre de cada estancia, hecho solo con esas fotos.",
+		step2_p: "Un vídeo corto con el nombre de cada estancia, hecho solo con esas fotos.",
 		step3_h: "Publica",
 		step3_p: "En tu web, en los portales inmobiliarios y en redes sociales.",
 		steps_note:
-			"Cada vídeo dura unos 25 segundos en 16:9, con el nombre de cada estancia y una tarjeta final con la marca.",
+			"Cada vídeo dura unos 25 segundos, en formato 16:9, con el nombre de cada estancia y una pantalla final con la marca.",
 		close_h: "Envía un anuncio. Recibe una muestra.",
-		close_p: "Adjunta o enlaza las fotos de un anuncio. La muestra es gratuita y se hace solo con esas fotos.",
+		close_p:
+			"Adjunta las fotos de un anuncio o envíanos el enlace. La muestra es gratuita y se hace solo con esas fotos.",
 		next_line: "Envía las fotos y te respondemos por correo con tu muestra.",
 		mail_pre: "O escribe a",
-		copy: "Copiar dirección",
+		copy: "Copiar correo",
 		copied: "Copiado",
-		copy_fail: "Selecciona la dirección de arriba para copiarla",
+		copy_fail: "Selecciona el correo de arriba para copiarlo",
 		foot1:
-			"El vídeo de muestra y los clips usan fotografía de stock de Pexels. Son demostraciones, no trabajos de clientes.",
+			"El vídeo de muestra y los vídeos de las fotos usan imágenes de stock de Pexels. Son demostraciones, no trabajos de clientes.",
 		foot2: "Este sitio no usa cookies ni carga nada de terceros.",
 		mail_subject: "Solicitud de muestra gratuita",
 		mail_body: "Agencia:\nFotos del anuncio (enlace o adjuntas):\nNúmero de fotos:",
@@ -263,6 +266,11 @@ let current = DEFAULT_LANGUAGE;
  */
 export function t(key) {
 	return messages[current][key] ?? messages[DEFAULT_LANGUAGE][key] ?? key;
+}
+
+/** @returns {string} the language the page is showing */
+export function currentLanguage() {
+	return current;
 }
 
 /**
@@ -310,13 +318,16 @@ export function applyLanguage(doc, language) {
 	const href = `mailto:${address}?subject=${encodeURIComponent(t("mail_subject"))}&body=${encodeURIComponent(t("mail_body"))}`;
 	for (const link of doc.querySelectorAll('a[data-mail="request"]')) link.setAttribute("href", href);
 
-	const select = /** @type {HTMLSelectElement | null} */ (doc.getElementById("lang"));
-	if (select) select.value = current;
+	for (const radio of doc.querySelectorAll("#lang [data-lang]")) {
+		const selected = radio.dataset.lang === current;
+		radio.setAttribute("aria-checked", String(selected));
+		radio.tabIndex = selected ? 0 : -1;
+	}
 	doc.dispatchEvent(new Event("languagechange"));
 }
 
 /**
- * Chooses the starting language and wires the selector. The choice is kept in localStorage,
+ * Chooses the starting language and wires the switcher. The choice is kept in localStorage,
  * which is not a cookie and never leaves the browser.
  * @param {Document} doc
  * @param {Window} win
@@ -336,8 +347,9 @@ export function initI18n(doc, win) {
 	});
 	applyLanguage(doc, language);
 
-	doc.getElementById("lang")?.addEventListener("change", (event) => {
-		const chosen = /** @type {HTMLSelectElement} */ (event.target).value;
+	doc.getElementById("lang")?.addEventListener("click", (event) => {
+		const chosen = /** @type {HTMLElement} */ (event.target).closest("[data-lang]")?.dataset.lang;
+		if (!chosen || chosen === current) return;
 		applyLanguage(doc, chosen);
 		try {
 			win.localStorage.setItem(STORAGE_KEY, chosen);

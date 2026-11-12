@@ -56,6 +56,7 @@ export function stubMedia() {
 			this.dispatchEvent(new Event("pause"));
 		},
 	});
+	Object.defineProperty(HTMLMediaElement.prototype, "load", { configurable: true, value: () => {} });
 	return { play, pause };
 }
 
