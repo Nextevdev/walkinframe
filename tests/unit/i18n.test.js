@@ -67,9 +67,7 @@ describe("applyLanguage on the real page", () => {
 		expect(document.querySelector('[data-lang="pt"]').getAttribute("aria-checked")).toBe("true");
 		expect(document.querySelector('[data-lang="en"]').getAttribute("aria-checked")).toBe("false");
 
-		const href = document.querySelector('a[data-mail="request"]').getAttribute("href");
-		expect(href).toContain("mailto:walkinframe.studio@gmail.com?subject=Pedido%20de%20amostra%20gratuita");
-		expect(href).toContain(encodeURIComponent("Agência:"));
+		expect(document.getElementById("mail-addr").getAttribute("href")).toMatch(/^mailto:/);
 	});
 
 	it("covers every translatable element in all four languages", () => {

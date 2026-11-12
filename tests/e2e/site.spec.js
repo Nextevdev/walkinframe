@@ -14,9 +14,8 @@ test("page loads clean: no console errors, no horizontal overflow", async ({ pag
 
 test("request buttons are real mailto links with a subject", async ({ page }) => {
 	await page.goto("/index.html");
-	const links = page.locator('a.btn[href^="mailto:"]');
-	await expect(links).toHaveCount(2);
-	expect(await links.first().getAttribute("href")).toContain("subject=Free%20sample%20request");
+	await expect(page.locator('a.btn[href^="mailto:"]')).toHaveCount(0);
+	expect(await page.locator("#mail-addr").getAttribute("href")).toMatch(/^mailto:/);
 });
 
 test("scroll reveal brings the closing block into view", async ({ page }) => {
@@ -50,12 +49,13 @@ test("sticky bar never hides a keyboard-focused control", async ({ page }) => {
 			const bar = document.querySelector(".bar").getBoundingClientRect();
 			const rect = element.getBoundingClientRect();
 			return {
-				exempt: element.closest(".bar") !== null || element.classList.contains("skip"),
+				label: `${element.tagName}.${element.className}`,
+				exempt: element === document.body || element.closest(".bar") !== null || element.classList.contains("skip"),
 				top: rect.top,
 				barBottom: bar.bottom,
 			};
 		});
-		if (!box.exempt) expect(box.top).toBeGreaterThanOrEqual(box.barBottom - 1);
+		if (!box.exempt) expect(box.top, box.label).toBeGreaterThanOrEqual(box.barBottom - 1);
 	}
 });
 
@@ -72,14 +72,14 @@ for (const [code, heading] of Object.entries(HEADINGS)) {
 		await expect(page.locator("h1 .h-heavy")).toHaveText(heading);
 		await expect(page.locator("html")).toHaveAttribute("lang", code);
 		await expect(page.locator(`#lang [data-lang="${code}"]`)).toHaveAttribute("aria-checked", "true");
-		expect(await page.locator('a[data-mail="request"]').first().getAttribute("href")).toContain("subject=");
+		expect(await page.locator("#mail-addr").getAttribute("href")).toMatch(/^mailto:/);
 		const overflow = await page.evaluate(
 			() => document.documentElement.scrollWidth - document.documentElement.clientWidth,
 		);
 		expect(overflow).toBeLessThanOrEqual(0);
 		const bar = await page.evaluate(() => {
 			const header = document.querySelector(".bar").getBoundingClientRect();
-			const button = document.querySelector(".bar .btn").getBoundingClientRect();
+			const button = document.querySelector(".bar .lang").getBoundingClientRect();
 			return { right: button.right, width: header.width };
 		});
 		expect(bar.right).toBeLessThanOrEqual(bar.width);

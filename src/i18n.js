@@ -61,8 +61,6 @@ export const messages = {
 		copy_fail: "Select the address above to copy it",
 		foot1: "Sample reel and clips use stock photography from Pexels. They are demonstrations, not client work.",
 		foot2: "This site sets no cookies and loads nothing from third parties.",
-		mail_subject: "Free sample request",
-		mail_body: "Agency:\nListing photos (link or attached):\nNumber of photos:",
 	},
 	pt: {
 		title: "Walk in Frame: as fotos do seu imóvel, em visita virtual",
@@ -125,8 +123,6 @@ export const messages = {
 		foot1:
 			"O vídeo de exemplo e os vídeos das fotos usam imagens de banco de imagens da Pexels. São demonstrações, não trabalhos de clientes.",
 		foot2: "Este site não usa cookies nem carrega nada de terceiros.",
-		mail_subject: "Pedido de amostra gratuita",
-		mail_body: "Agência:\nFotos do anúncio (ligação ou em anexo):\nN.º de fotos:",
 	},
 	it: {
 		title: "Walk in Frame: le foto del tuo immobile, in video tour",
@@ -189,8 +185,6 @@ export const messages = {
 		foot1:
 			"Il video di esempio e i video delle foto usano immagini di archivio di Pexels. Sono dimostrazioni, non lavori per clienti.",
 		foot2: "Questo sito non usa cookie e non carica nulla da terze parti.",
-		mail_subject: "Richiesta di campione gratuito",
-		mail_body: "Agenzia:\nFoto dell'annuncio (link o allegate):\nNumero di foto:",
 	},
 	es: {
 		title: "Walk in Frame: las fotos de tu inmueble, en recorrido virtual",
@@ -253,8 +247,6 @@ export const messages = {
 		foot1:
 			"El vídeo de muestra y los vídeos de las fotos usan imágenes de banco de imágenes de Pexels. Son demostraciones, no trabajos de clientes.",
 		foot2: "Este sitio no usa cookies ni carga nada de terceros.",
-		mail_subject: "Solicitud de muestra gratuita",
-		mail_body: "Agencia:\nFotos del anuncio (enlace o adjuntas):\nNúmero de fotos:",
 	},
 };
 
@@ -313,10 +305,6 @@ export function applyLanguage(doc, language) {
 	for (const button of doc.querySelectorAll("[data-i18n-clip]")) {
 		button.setAttribute("aria-label", `${t("play_clip")} ${t(button.dataset.i18nClip)}`);
 	}
-
-	const address = doc.getElementById("mail-addr")?.textContent?.trim() ?? "";
-	const href = `mailto:${address}?subject=${encodeURIComponent(t("mail_subject"))}&body=${encodeURIComponent(t("mail_body"))}`;
-	for (const link of doc.querySelectorAll('a[data-mail="request"]')) link.setAttribute("href", href);
 
 	for (const radio of doc.querySelectorAll("#lang [data-lang]")) {
 		const selected = radio.dataset.lang === current;
