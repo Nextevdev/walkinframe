@@ -1,10 +1,15 @@
+import { t } from "./i18n.js";
+
 /**
+ * Sets the state chip from a message key and remembers it, so a language change can redraw it.
  * @param {Element} button
- * @param {string} text
+ * @param {string} key
  */
-export function setLabel(button, text) {
+export function setLabel(button, key) {
 	const chip = button.querySelector(".tile-state");
-	if (chip) chip.textContent = text;
+	if (!chip) return;
+	chip.dataset.chip = key;
+	chip.textContent = t(key);
 }
 
 /**
@@ -14,7 +19,7 @@ export function setLabel(button, text) {
 export function mark(button, playing) {
 	button.classList.toggle("is-playing", playing);
 	button.setAttribute("aria-pressed", String(playing));
-	setLabel(button, playing ? "Video" : "Photo");
+	setLabel(button, playing ? "chip_video" : "chip_photo");
 }
 
 /**
@@ -29,9 +34,9 @@ export function initTiles(doc, env) {
 	const play = (button) => {
 		const video = button.querySelector("video");
 		video.currentTime = 0;
-		if (video.readyState < 3) setLabel(button, "Loading");
+		if (video.readyState < 3) setLabel(button, "chip_loading");
 		video.play().catch((error) => {
-			if (error.name !== "AbortError" && error.name !== "NotAllowedError") setLabel(button, "Unavailable");
+			if (error.name !== "AbortError" && error.name !== "NotAllowedError") setLabel(button, "chip_unavailable");
 		});
 	};
 	const stop = (button) => {
@@ -55,13 +60,14 @@ export function initTiles(doc, env) {
 			ref.setAttribute("aria-hidden", "true");
 			ref.style.backgroundImage = `url("${photo.getAttribute("src")}")`;
 			const caption = doc.createElement("span");
-			caption.textContent = "Source photo";
+			caption.dataset.i18n = "source_photo";
+			caption.textContent = t("source_photo");
 			ref.append(caption);
 			button.append(ref);
 		}
 
 		video.addEventListener("playing", () => mark(button, true));
-		video.addEventListener("error", () => setLabel(button, "Unavailable"));
+		video.addEventListener("error", () => setLabel(button, "chip_unavailable"));
 		video.addEventListener("timeupdate", () => {
 			if (video.duration > 0) button.style.setProperty("--p", String(video.currentTime / video.duration));
 		});
@@ -86,6 +92,11 @@ export function initTiles(doc, env) {
 			else stop(button);
 		});
 	}
+
+	/* A language change redraws each chip in its current state. */
+	doc.addEventListener("languagechange", () => {
+		for (const button of tiles) setLabel(button, button.querySelector(".tile-state")?.dataset.chip ?? "chip_photo");
+	});
 
 	/* Touch screens have no hover: the tile in view plays, one at a time. */
 	const win = doc.defaultView;

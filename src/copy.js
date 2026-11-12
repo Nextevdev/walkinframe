@@ -1,3 +1,5 @@
+import { t } from "./i18n.js";
+
 const RESET_MS = 3000;
 
 /**
@@ -15,9 +17,9 @@ export function initCopy(doc) {
 		const address = (link.textContent ?? "").trim();
 		try {
 			await doc.defaultView.navigator.clipboard.writeText(address);
-			status.textContent = "Copied";
+			status.textContent = t("copied");
 		} catch {
-			status.textContent = "Select the address above to copy it";
+			status.textContent = t("copy_fail");
 		}
 		status.classList.add("is-shown");
 		setTimeout(() => {

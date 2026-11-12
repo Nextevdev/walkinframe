@@ -152,9 +152,49 @@ a {
 	margin-left: calc(var(--w) * -0.09);
 }
 .bar .btn {
+	display: inline-flex;
+	align-items: center;
 	min-height: 2.75rem;
 	padding: 0.8rem 1.2rem;
 	font-size: 1.1875rem;
+}
+.bar-end {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+}
+.cta-short {
+	display: none;
+}
+
+/* Language selector: native select, so keyboard and screen readers get it for free. */
+.lang {
+	appearance: none;
+	min-height: 2.75rem;
+	min-width: 4rem;
+	padding: 0 1.9rem 0 0.9rem;
+	font: inherit;
+	font-size: 1rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	color: var(--cream);
+	background-color: transparent;
+	background-image: linear-gradient(45deg, transparent 50%, var(--cream) 50%),
+		linear-gradient(135deg, var(--cream) 50%, transparent 50%);
+	background-position: calc(100% - 1.05rem) 55%, calc(100% - 0.75rem) 55%;
+	background-size: 0.3rem 0.3rem;
+	background-repeat: no-repeat;
+	border: 1px solid var(--cream-dim);
+	border-radius: 0;
+	cursor: pointer;
+	transition: border-color 160ms ease;
+}
+.lang:hover {
+	border-color: var(--cream);
+}
+.lang option {
+	background: var(--ground-deep);
+	color: var(--cream);
 }
 
 /* Hero */
@@ -710,6 +750,20 @@ html {
 		padding: 0.6rem 0.9rem;
 		font-size: 1.0625rem;
 		white-space: nowrap;
+	}
+	.bar-end {
+		gap: 0.5rem;
+	}
+	.lang {
+		min-width: 3.5rem;
+		padding-left: 0.6rem;
+		background-position: calc(100% - 0.95rem) 55%, calc(100% - 0.65rem) 55%;
+	}
+	.bar .cta-long {
+		display: none;
+	}
+	.bar .cta-short {
+		display: inline;
 	}
 	.tile-b,
 	.tile-c,

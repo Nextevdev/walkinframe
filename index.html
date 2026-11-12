@@ -20,132 +20,140 @@
 		<link rel="stylesheet" href="styles.css" />
 	</head>
 	<body>
-		<a class="skip" href="#sample">Skip to the sample request</a>
+		<a class="skip" href="#sample" data-i18n="skip">Skip to the sample request</a>
 
 		<header class="bar">
-			<a class="bar-logo" href="#top" aria-label="Walk in Frame, back to top">
+			<a class="bar-logo" href="#top" aria-label="Walk in Frame, back to top" data-i18n-attr="aria-label:logo_aria">
 				<img src="assets/logo-lockup-escuro.png" alt="Walk in Frame" width="2200" height="520" />
 			</a>
-			<a class="btn btn-door" href="mailto:walkinframe.studio@gmail.com?subject=Free%20sample%20request&amp;body=Agency%3A%0D%0AListing%20photos%20(link%20or%20attached)%3A%0D%0ANumber%20of%20photos%3A">Request a sample</a>
+			<div class="bar-end">
+				<select class="lang" id="lang" aria-label="Language" data-i18n-attr="aria-label:lang_label">
+					<option value="pt" lang="pt" aria-label="Português">PT</option>
+					<option value="it" lang="it" aria-label="Italiano">IT</option>
+					<option value="es" lang="es" aria-label="Español">ES</option>
+					<option value="en" lang="en" aria-label="English" selected>EN</option>
+				</select>
+				<a class="btn btn-door" data-mail="request" href="mailto:walkinframe.studio@gmail.com?subject=Free%20sample%20request&amp;body=Agency%3A%0D%0AListing%20photos%20(link%20or%20attached)%3A%0D%0ANumber%20of%20photos%3A"><span class="cta-long" data-i18n="cta">Request a sample</span><span class="cta-short" data-i18n="cta_short">Sample</span></a>
+			</div>
 		</header>
 
 		<main id="top">
 			<section class="hero" aria-labelledby="hero-title">
 				<div class="hero-copy">
 					<h1 id="hero-title">
-						<span class="h-heavy">The camera moves.</span>
-						<span class="h-light">The property doesn't.</span>
+						<span class="h-heavy" data-i18n="h1_a">The camera moves.</span>
+						<span class="h-light" data-i18n="h1_b">The property doesn't.</span>
 					</h1>
-					<p class="lede">Send us your property photos. We return a short walk-through video built only from what the photos show.</p>
+					<p class="lede" data-i18n="lede">Send us your property photos. We return a short walk-through video built only from what the photos show.</p>
 					<div class="actions">
-						<a class="btn btn-door" href="mailto:walkinframe.studio@gmail.com?subject=Free%20sample%20request&amp;body=Agency%3A%0D%0AListing%20photos%20(link%20or%20attached)%3A%0D%0ANumber%20of%20photos%3A">Request a sample</a>
-						<a class="link" href="#strip">See how a photo walks</a>
+						<a class="btn btn-door" data-mail="request" data-i18n="cta" href="mailto:walkinframe.studio@gmail.com?subject=Free%20sample%20request&amp;body=Agency%3A%0D%0AListing%20photos%20(link%20or%20attached)%3A%0D%0ANumber%20of%20photos%3A">Request a sample</a>
+						<a class="link" href="#strip" data-i18n="link_see">See how a photo walks</a>
 					</div>
 				</div>
 
 				<div class="hero-reel">
 					<div class="reel-frame">
-						<video id="reel" class="reel" src="assets/media/reel.mp4" poster="assets/media/reel-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Sample reel: six rooms, each built from a single listing photo"></video>
+						<video id="reel" class="reel" src="assets/media/reel.mp4" poster="assets/media/reel-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Sample reel: six rooms, each built from a single listing photo" data-i18n-attr="aria-label:reel_aria"></video>
 						<button class="reel-toggle" type="button" id="reel-toggle">Pause</button>
 						<div class="reel-progress" aria-hidden="true"><i></i></div>
 					</div>
-					<p class="reel-note">Sample reel, 27 s. Built from stock photographs, not client work.</p>
+					<p class="reel-note" data-i18n="reel_note">Sample reel, 27 s. Built from stock photographs, not client work.</p>
 				</div>
 			</section>
 
 			<section class="strip" id="strip" aria-labelledby="strip-title">
 				<div class="promise">
-					<h2 id="strip-title">Nothing in the video that isn't in the photo.</h2>
-					<p>No added furniture, no bigger rooms, no invented spaces. The camera moves through your photograph, and the property stays as listed.</p>
-					<p class="hint"><span class="hint-hover">Hover a photo. It walks.</span><span class="hint-touch">Tap a photo. It walks.</span><span class="hint-click">Click a photo to play its clip.</span></p>
+					<h2 id="strip-title" data-i18n="promise_h">Nothing in the video that isn't in the photo.</h2>
+					<p data-i18n="promise_p">No added furniture, no bigger rooms, no invented spaces. The camera moves through your photograph, and the property stays as listed.</p>
+					<p class="hint"><span class="hint-hover" data-i18n="hint_hover">Hover a photo. It walks.</span><span class="hint-touch" data-i18n="hint_touch">Tap a photo. It walks.</span><span class="hint-click" data-i18n="hint_click">Click a photo to play its clip.</span></p>
 				</div>
 
 				<div class="tiles">
 					<figure class="tile tile-a">
-						<button class="tile-btn" type="button" aria-pressed="false" aria-label="Play the garden and pool clip">
-							<img src="assets/photos/01-exterior.jpg" alt="Brick house seen across a pool and lawn" width="1280" height="853" loading="lazy" />
+						<button class="tile-btn" type="button" aria-pressed="false" aria-label="Play the garden and pool clip" data-i18n-clip="tile_a">
+							<img src="assets/photos/01-exterior.jpg" alt="Brick house seen across a pool and lawn" data-i18n-attr="alt:alt_a" width="1280" height="853" loading="lazy" />
 							<video src="assets/media/01-exterior.mp4" muted loop playsinline preload="none" tabindex="-1" aria-hidden="true"></video>
 							<span class="tile-state" aria-hidden="true">Photo</span>
 						</button>
-						<figcaption>Garden and pool</figcaption>
+						<figcaption data-i18n="tile_a">Garden and pool</figcaption>
 					</figure>
 
 					<figure class="tile tile-b">
-						<button class="tile-btn" type="button" aria-pressed="false" aria-label="Play the entrance hall clip">
-							<img src="assets/photos/02-hall.jpg" alt="Entrance hall with a curved staircase" width="1280" height="853" loading="lazy" />
+						<button class="tile-btn" type="button" aria-pressed="false" aria-label="Play the entrance hall clip" data-i18n-clip="tile_b">
+							<img src="assets/photos/02-hall.jpg" alt="Entrance hall with a curved staircase" data-i18n-attr="alt:alt_b" width="1280" height="853" loading="lazy" />
 							<video src="assets/media/02-hall.mp4" muted loop playsinline preload="none" tabindex="-1" aria-hidden="true"></video>
 							<span class="tile-state" aria-hidden="true">Photo</span>
 						</button>
-						<figcaption>Entrance hall</figcaption>
+						<figcaption data-i18n="tile_b">Entrance hall</figcaption>
 					</figure>
 
 					<figure class="tile tile-c">
-						<button class="tile-btn" type="button" aria-pressed="false" aria-label="Play the open-plan living clip">
-							<img src="assets/photos/03-living-wide.jpg" alt="Open-plan living room with kitchen and a city view" width="1280" height="853" loading="lazy" />
+						<button class="tile-btn" type="button" aria-pressed="false" aria-label="Play the open-plan living clip" data-i18n-clip="tile_c">
+							<img src="assets/photos/03-living-wide.jpg" alt="Open-plan living room with kitchen and a city view" data-i18n-attr="alt:alt_c" width="1280" height="853" loading="lazy" />
 							<video src="assets/media/03-living-wide.mp4" muted loop playsinline preload="none" tabindex="-1" aria-hidden="true"></video>
 							<span class="tile-state" aria-hidden="true">Photo</span>
 						</button>
-						<figcaption>Open-plan living</figcaption>
+						<figcaption data-i18n="tile_c">Open-plan living</figcaption>
 					</figure>
 
 					<figure class="tile tile-d">
-						<button class="tile-btn" type="button" aria-pressed="false" aria-label="Play the living room clip">
-							<img src="assets/photos/04-living.jpg" alt="Living room with a dark sofa and orange curtains" width="1280" height="853" loading="lazy" />
+						<button class="tile-btn" type="button" aria-pressed="false" aria-label="Play the living room clip" data-i18n-clip="tile_d">
+							<img src="assets/photos/04-living.jpg" alt="Living room with a dark sofa and orange curtains" data-i18n-attr="alt:alt_d" width="1280" height="853" loading="lazy" />
 							<video src="assets/media/04-living.mp4" muted loop playsinline preload="none" tabindex="-1" aria-hidden="true"></video>
 							<span class="tile-state" aria-hidden="true">Photo</span>
 						</button>
-						<figcaption>Living room</figcaption>
+						<figcaption data-i18n="tile_d">Living room</figcaption>
 					</figure>
 
 					<figure class="tile tile-e">
-						<button class="tile-btn" type="button" aria-pressed="false" aria-label="Play the kitchen clip">
-							<img src="assets/photos/05-kitchen.jpg" alt="Kitchen with a marble counter and two wire stools" width="1280" height="853" loading="lazy" />
+						<button class="tile-btn" type="button" aria-pressed="false" aria-label="Play the kitchen clip" data-i18n-clip="tile_e">
+							<img src="assets/photos/05-kitchen.jpg" alt="Kitchen with a marble counter and two wire stools" data-i18n-attr="alt:alt_e" width="1280" height="853" loading="lazy" />
 							<video src="assets/media/05-kitchen.mp4" muted loop playsinline preload="none" tabindex="-1" aria-hidden="true"></video>
 							<span class="tile-state" aria-hidden="true">Photo</span>
 						</button>
-						<figcaption>Kitchen</figcaption>
+						<figcaption data-i18n="tile_e">Kitchen</figcaption>
 					</figure>
 
 					<figure class="tile tile-f">
-						<button class="tile-btn" type="button" aria-pressed="false" aria-label="Play the bedroom clip">
-							<img src="assets/photos/06-bedroom.jpg" alt="Bedroom with teal curtains and a glass wall" width="1280" height="853" loading="lazy" />
+						<button class="tile-btn" type="button" aria-pressed="false" aria-label="Play the bedroom clip" data-i18n-clip="tile_f">
+							<img src="assets/photos/06-bedroom.jpg" alt="Bedroom with teal curtains and a glass wall" data-i18n-attr="alt:alt_f" width="1280" height="853" loading="lazy" />
 							<video src="assets/media/06-bedroom.mp4" muted loop playsinline preload="none" tabindex="-1" aria-hidden="true"></video>
 							<span class="tile-state" aria-hidden="true">Photo</span>
 						</button>
-						<figcaption>Bedroom</figcaption>
+						<figcaption data-i18n="tile_f">Bedroom</figcaption>
 					</figure>
 
 				</div>
 			</section>
 
 			<section class="steps" id="steps" aria-labelledby="steps-title">
-				<h2 id="steps-title" class="sr-only">How it works</h2>
+				<h2 id="steps-title" class="sr-only" data-i18n="steps_h">How it works</h2>
 				<ol>
 					<li>
-						<strong>Send</strong>
-						<span>The property photos you already have.</span>
+						<strong data-i18n="step1_h">Send</strong>
+						<span data-i18n="step1_p">The property photos you already have.</span>
 					</li>
 					<li>
-						<strong>Receive</strong>
-						<span>A short walk-through video with room labels, made only from those photos.</span>
+						<strong data-i18n="step2_h">Receive</strong>
+						<span data-i18n="step2_p">A short walk-through video with room labels, made only from those photos.</span>
 					</li>
 					<li>
-						<strong>Publish</strong>
-						<span>On your site, the property portals and social.</span>
+						<strong data-i18n="step3_h">Publish</strong>
+						<span data-i18n="step3_p">On your site, the property portals and social.</span>
 					</li>
 				</ol>
-				<p class="steps-note">Each video runs about 25 seconds in 16:9, with room labels and a closing brand card.</p>
+				<p class="steps-note" data-i18n="steps_note">Each video runs about 25 seconds in 16:9, with room labels and a closing brand card.</p>
 			</section>
 
 			<section class="close" id="sample" aria-labelledby="close-title">
-				<h2 id="close-title">Send one listing. Get a sample back.</h2>
+				<h2 id="close-title" data-i18n="close_h">Send one listing. Get a sample back.</h2>
 				<div class="close-side">
-					<p>Attach or link the photos of one listing. The sample is free, and it is made only from those photos.</p>
-					<a class="btn btn-door btn-lg" href="mailto:walkinframe.studio@gmail.com?subject=Free%20sample%20request&amp;body=Agency%3A%0D%0AListing%20photos%20(link%20or%20attached)%3A%0D%0ANumber%20of%20photos%3A">Request a sample</a>
-					<p class="next-line">Send the photos and we reply by email with your sample.</p>
-						<p class="mail-line">
-						Or write to <a href="mailto:walkinframe.studio@gmail.com" id="mail-addr">walkinframe.studio@gmail.com</a>
-						<button class="copy" type="button" id="copy-mail">Copy address</button>
+					<p data-i18n="close_p">Attach or link the photos of one listing. The sample is free, and it is made only from those photos.</p>
+					<a class="btn btn-door btn-lg" data-mail="request" data-i18n="cta" href="mailto:walkinframe.studio@gmail.com?subject=Free%20sample%20request&amp;body=Agency%3A%0D%0AListing%20photos%20(link%20or%20attached)%3A%0D%0ANumber%20of%20photos%3A">Request a sample</a>
+					<p class="next-line" data-i18n="next_line">Send the photos and we reply by email with your sample.</p>
+					<p class="mail-line">
+						<span data-i18n="mail_pre">Or write to</span> <a href="mailto:walkinframe.studio@gmail.com" id="mail-addr">walkinframe.studio@gmail.com</a>
+						<button class="copy" type="button" id="copy-mail" data-i18n="copy">Copy address</button>
 						<span class="copy-status" id="copy-status" role="status"></span>
 					</p>
 				</div>
@@ -154,8 +162,8 @@
 
 		<footer class="foot">
 			<img class="foot-logo" src="assets/logo-lockup-escuro.png" alt="Walk in Frame" width="2200" height="520" />
-			<p>Sample reel and clips use stock photography from Pexels. They are demonstrations, not client work.</p>
-			<p>This site sets no cookies and loads nothing from third parties.</p>
+			<p data-i18n="foot1">Sample reel and clips use stock photography from Pexels. They are demonstrations, not client work.</p>
+			<p data-i18n="foot2">This site sets no cookies and loads nothing from third parties.</p>
 		</footer>
 
 		<script type="module" src="main.js"></script>

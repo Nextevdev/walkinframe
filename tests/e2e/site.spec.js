@@ -58,3 +58,39 @@ test("sticky bar never hides a keyboard-focused control", async ({ page }) => {
 		if (!box.exempt) expect(box.top).toBeGreaterThanOrEqual(box.barBottom - 1);
 	}
 });
+
+const HEADINGS = {
+	pt: "A câmara move-se.",
+	it: "La camera si muove.",
+	es: "La cámara se mueve.",
+	en: "The camera moves.",
+};
+
+for (const [code, heading] of Object.entries(HEADINGS)) {
+	test(`language ${code}: heading, html lang, mail subject and no overflow`, async ({ page }) => {
+		await page.goto(`/index.html?lang=${code}`);
+		await expect(page.locator("h1 .h-heavy")).toHaveText(heading);
+		await expect(page.locator("html")).toHaveAttribute("lang", code);
+		await expect(page.locator("#lang")).toHaveValue(code);
+		expect(await page.locator('a[data-mail="request"]').first().getAttribute("href")).toContain("subject=");
+		const overflow = await page.evaluate(
+			() => document.documentElement.scrollWidth - document.documentElement.clientWidth,
+		);
+		expect(overflow).toBeLessThanOrEqual(0);
+		const bar = await page.evaluate(() => {
+			const header = document.querySelector(".bar").getBoundingClientRect();
+			const button = document.querySelector(".bar .btn").getBoundingClientRect();
+			return { right: button.right, width: header.width };
+		});
+		expect(bar.right).toBeLessThanOrEqual(bar.width);
+	});
+}
+
+test("the selector switches language and the choice survives a reload", async ({ page }) => {
+	await page.goto("/index.html");
+	await page.locator("#lang").selectOption("it");
+	await expect(page.locator("h1 .h-heavy")).toHaveText("La camera si muove.");
+	await page.reload();
+	await expect(page.locator("h1 .h-heavy")).toHaveText("La camera si muove.");
+	await expect(page.locator("#lang")).toHaveValue("it");
+});

@@ -22,7 +22,7 @@ describe("tiles", () => {
 
 	it("setLabel and mark keep chip and aria in step", () => {
 		const button = document.querySelector(".tile-btn");
-		setLabel(button, "Loading");
+		setLabel(button, "chip_loading");
 		expect(button.querySelector(".tile-state").textContent).toBe("Loading");
 		mark(button, true);
 		expect(button.getAttribute("aria-pressed")).toBe("true");

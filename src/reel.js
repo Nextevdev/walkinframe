@@ -1,3 +1,5 @@
+import { t } from "./i18n.js";
+
 /**
  * Hero reel: pause control, progress bar, no autoplay under reduced motion,
  * and no playback while the reel is off screen.
@@ -12,7 +14,7 @@ export function initReel(doc, env) {
 	if (!reel || !toggle) return false;
 
 	const sync = () => {
-		toggle.textContent = reel.paused ? "Play" : "Pause";
+		toggle.textContent = t(reel.paused ? "play" : "pause");
 	};
 	const progress = () => {
 		if (bar && reel.duration > 0) bar.style.transform = `scaleX(${reel.currentTime / reel.duration})`;
@@ -36,6 +38,7 @@ export function initReel(doc, env) {
 	reel.addEventListener("play", sync);
 	reel.addEventListener("pause", sync);
 	reel.addEventListener("timeupdate", progress);
+	doc.addEventListener("languagechange", sync);
 	sync();
 
 	const win = doc.defaultView;
