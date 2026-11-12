@@ -2,10 +2,10 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; media-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'" />
+		<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; media-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'" />
 		<meta name="referrer" content="no-referrer" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Walk in Frame</title>
+		<title>Walk in Frame: property photos, walked through</title>
 		<meta name="description" content="Walk in Frame turns your property photos into short walk-through videos. The camera moves, the property doesn't change. Ask for a free sample." />
 		<meta name="theme-color" content="#12211D" />
 		<meta property="og:type" content="website" />
@@ -26,7 +26,7 @@
 			<a class="bar-logo" href="#top" aria-label="Walk in Frame, back to top">
 				<img src="assets/logo-lockup-escuro.png" alt="Walk in Frame" width="2200" height="520" />
 			</a>
-			<a class="btn btn-door" href="#" data-mailto="Free sample request">Get a free sample</a>
+			<a class="btn btn-door" href="mailto:walkinframe.studio@gmail.com?subject=Free%20sample%20request&amp;body=Agency%3A%0D%0AListing%20photos%20(link%20or%20attached)%3A%0D%0ANumber%20of%20photos%3A">Request a sample</a>
 		</header>
 
 		<main id="top">
@@ -38,7 +38,7 @@
 					</h1>
 					<p class="lede">Send us your property photos. We return a short walk-through video built only from what the photos show.</p>
 					<div class="actions">
-						<a class="btn btn-door" href="#" data-mailto="Free sample request">Get a free sample</a>
+						<a class="btn btn-door" href="mailto:walkinframe.studio@gmail.com?subject=Free%20sample%20request&amp;body=Agency%3A%0D%0AListing%20photos%20(link%20or%20attached)%3A%0D%0ANumber%20of%20photos%3A">Request a sample</a>
 						<a class="link" href="#strip">See how a photo walks</a>
 					</div>
 				</div>
@@ -47,13 +47,18 @@
 					<div class="reel-frame">
 						<video id="reel" class="reel" src="assets/media/reel.mp4" poster="assets/media/reel-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Sample reel: six rooms, each built from a single listing photo"></video>
 						<button class="reel-toggle" type="button" id="reel-toggle">Pause</button>
+						<div class="reel-progress" aria-hidden="true"><i></i></div>
 					</div>
 					<p class="reel-note">Sample reel, 27 s. Built from stock photographs, not client work.</p>
 				</div>
 			</section>
 
 			<section class="strip" id="strip" aria-labelledby="strip-title">
-				<h2 id="strip-title"><span class="hint-hover">Hover a photo. It walks.</span><span class="hint-touch">Tap a photo. It walks.</span></h2>
+				<div class="promise">
+					<h2 id="strip-title">Nothing in the video that isn't in the photo.</h2>
+					<p>No added furniture, no bigger rooms, no invented spaces. The camera moves through your photograph, and the property stays as listed.</p>
+					<p class="hint"><span class="hint-hover">Hover a photo. It walks.</span><span class="hint-touch">Tap a photo. It walks.</span><span class="hint-click">Click a photo to play its clip.</span></p>
+				</div>
 
 				<div class="tiles">
 					<figure class="tile tile-a">
@@ -64,11 +69,6 @@
 						</button>
 						<figcaption>Garden and pool</figcaption>
 					</figure>
-
-					<div class="promise">
-						<h3>Nothing in the video that isn't in the photo.</h3>
-						<p>No added furniture, no bigger rooms, no invented spaces. The camera moves through your photograph, and the property stays as listed.</p>
-					</div>
 
 					<figure class="tile tile-b">
 						<button class="tile-btn" type="button" aria-pressed="false" aria-label="Play the entrance hall clip">
@@ -134,15 +134,20 @@
 						<span>On your site, the property portals and social.</span>
 					</li>
 				</ol>
-				<p class="steps-note">The video runs about 25 seconds in 16:9, like the sample reel above.</p>
+				<p class="steps-note">Each video runs about 25 seconds in 16:9, with room labels and a closing brand card.</p>
 			</section>
 
 			<section class="close" id="sample" aria-labelledby="close-title">
 				<h2 id="close-title">Send one listing. Get a sample back.</h2>
 				<div class="close-side">
-					<p>The sample is free, and it is made from the photos you send.</p>
-					<a class="btn btn-door btn-lg" href="#" data-mailto="Free sample request">Get a free sample</a>
-					<p class="mail-line">Or write to <a href="#" data-mailto="">walkinframe.studio@gmail.com</a></p>
+					<p>Attach or link the photos of one listing. The sample is free, and it is made only from those photos.</p>
+					<a class="btn btn-door btn-lg" href="mailto:walkinframe.studio@gmail.com?subject=Free%20sample%20request&amp;body=Agency%3A%0D%0AListing%20photos%20(link%20or%20attached)%3A%0D%0ANumber%20of%20photos%3A">Request a sample</a>
+					<p class="next-line">Send the photos and we reply by email with your sample.</p>
+						<p class="mail-line">
+						Or write to <a href="mailto:walkinframe.studio@gmail.com" id="mail-addr">walkinframe.studio@gmail.com</a>
+						<button class="copy" type="button" id="copy-mail">Copy address</button>
+						<span class="copy-status" id="copy-status" role="status"></span>
+					</p>
 				</div>
 			</section>
 		</main>
@@ -153,6 +158,6 @@
 			<p>This site sets no cookies and loads nothing from third parties.</p>
 		</footer>
 
-		<script src="main.js" defer></script>
+		<script type="module" src="main.js"></script>
 	</body>
 </html>

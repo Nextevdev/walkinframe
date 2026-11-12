@@ -1,0 +1,31 @@
+{
+	"name": "walkinframe-site",
+	"private": true,
+	"type": "module",
+	"description": "Walk in Frame landing page. Static site: these tools are for development only and are never published.",
+	"scripts": {
+		"serve": "python -m http.server 8766",
+		"lint": "biome check .",
+		"lint:fix": "biome check --write .",
+		"knip": "knip",
+		"arch": "depcruise main.js src --config .dependency-cruiser.cjs",
+		"test": "vitest run",
+		"test:coverage": "vitest run --coverage",
+		"test:e2e": "playwright test",
+		"mutation": "stryker run",
+		"check": "npm run lint && npm run knip && npm run arch && npm run test:coverage"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.0.0",
+		"@commitlint/cli": "^19.0.0",
+		"@commitlint/config-conventional": "^19.0.0",
+		"@playwright/test": "^1.50.0",
+		"@stryker-mutator/core": "^9.0.0",
+		"@stryker-mutator/vitest-runner": "^9.0.0",
+		"@vitest/coverage-v8": "^3.0.0",
+		"dependency-cruiser": "^16.0.0",
+		"jsdom": "^26.0.0",
+		"knip": "^5.0.0",
+		"vitest": "^3.0.0"
+	}
+}

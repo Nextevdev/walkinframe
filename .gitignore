@@ -3,3 +3,9 @@
 PRODUCT.md
 DESIGN.md
 *.bak
+node_modules/
+coverage/
+reports/
+.stryker-tmp/
+test-results/
+playwright-report/
